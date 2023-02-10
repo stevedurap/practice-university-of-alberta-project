@@ -13,6 +13,10 @@ Feature: Retrieve Information about a Person on the University of Alberta Websit
     And the user clicks the Search button
     Then the user should see the information about the searched person, including their name.
 
+  Scenario: Incorrect Person Search
+    And the user  user enters an invalid name "***** *****" into the search field
+    And the user clicks the Search button
+    Then the user should be displayed with the message "Please enter a valid search query in the box below."
 
   Scenario Outline: Search for a Person by Name_Data Driven testing
     And the user inputs the person's "<full name>" into the search box

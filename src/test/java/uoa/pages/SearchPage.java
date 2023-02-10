@@ -27,4 +27,7 @@ public class SearchPage {
     @FindBy (xpath = "//h2[@class='mb-2']")
     public WebElement fullName;
 
+    @FindBy (xpath = "//div[@role='alert']")
+    public WebElement message;
+
 }

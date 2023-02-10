@@ -76,4 +76,24 @@ public class SearchSteps {
         searchPage.searchBox.sendKeys(FULLNAME);
     }
 
+    @When("the user  user enters an invalid name {string} into the search field")
+    public void the_user_user_enters_an_invalid_name_into_the_search_field(String invalidName) {
+
+        searchPage.searchBox.sendKeys(invalidName);
+
+    }
+    @Then("the user should be displayed with the message {string}")
+    public void the_user_should_be_displayed_with_the_message(String expMessage) {
+
+        String actualMessage = searchPage.message.getText();
+
+        System.out.println(actualMessage);
+
+        Assert.assertEquals(expMessage,actualMessage);
+
+
+    }
+
+
+
 }
